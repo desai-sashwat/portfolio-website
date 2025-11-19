@@ -217,11 +217,11 @@
                         <i class="fas fa-theater-masks"></i>
                     </div>
                     <h3>Shakespearean Text Generator</h3>
-                    <p>Recurrent Neural Network trained on Shakespeare's complete works to generate authentic-sounding text. Implemented using LSTM architecture.</p>
+                    <p>LSTM model (512-unit) trained on 5.7MB Shakespeare corpus using sliding-window sequences and temperature-controlled sampling. Generates 600+ word passages with authentic Elizabethan style, archaic vocabulary, and dramatic dialogue through multinomial distribution-based text generation.</p>
                     <div class="project-tags">
                         <span class="tag">RNN</span>
                         <span class="tag">Keras</span>
-                        <span class="tag">PyTorch</span>
+                        <span class="tag">LSTM</span>
                     </div>
                     <a href="https://github.com/desai-sashwat/shakespearean-text-generator" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                 </div>
@@ -230,7 +230,7 @@
                         <i class="fas fa-music"></i>
                     </div>
                     <h3>Bach Chorale Generator</h3>
-                    <p>Deep learning model that composes Bach-style chorales using sequence-to-sequence RNN architecture. Trained on CSV files of Bach's chorales.</p>
+                    <p>LSTM sequence-to-sequence model (64-unit) trained on 382 Bach compositions for four-part harmony generation using 16-timestep sliding windows. Achieves 0.0089 MSE with temperature-controlled autoregressive sampling and custom audio synthesis at 22050 Hz for real-time playback of generated chorales.</p>
                     <div class="project-tags">
                         <span class="tag">RNN</span>
                         <span class="tag">Keras</span>
@@ -256,7 +256,7 @@
                         <i class="fas fa-virus"></i>
                     </div>
                     <h3>COVID-19 Impact Analysis</h3>
-                    <p>Comprehensive data analysis examining COVID-19's impact on various sectors using time series analysis, predictive modeling, and data visualization.</p>
+                    <p>Analyzed 1,182 student survey responses using chi-square, ANOVA, and logistic regression to examine lockdown behaviors and health outcomes. Found significant negative correlation (r=-0.16, p<0.001) between self-study and social media usage, identifying physical activity and sleep as critical wellness protective factors.</p>
                     <div class="project-tags">
                         <span class="tag">Data Analysis</span>
                         <span class="tag">Time Series</span>
@@ -269,7 +269,7 @@
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Economic Growth Modeling</h3>
-                    <p>Mathematical model analyzing factors influencing economic growth using differential equations and statistical methods. Applied to real-world economic data.</p>
+                    <p>Mathematical framework integrating Solow Growth and Malthusian Population models through four differential equations to analyze inter-regional economic dynamics. Proved unique equilibrium existence and stability properties, identifying critical capital-induced labor mobility thresholds affecting regional convergence and economic inequality.</p>
                     <div class="project-tags">
                         <span class="tag">Mathematical Economics</span>
                         <span class="tag">Modeling</span>
@@ -282,7 +282,7 @@
                         <i class="fas fa-eye"></i>
                     </div>
                     <h3>Diabetic Retinopathy Detection</h3>
-                    <p>Deep learning based medical imaging system for automated detection of diabetic retinopathy from retinal images. Achieved high accuracy in multi-class classification.</p>
+                    <p>Deep learning pipeline using DenseNet 169 achieving 97.17% accuracy on 703 augmented fundus images for automated retinal disease screening. Collaborated with Malpani Eye Hospital for clinical validation, implementing CNN/ResNet architectures with dropout/batch normalization to assist ophthalmologists in early detection and vision loss prevention.</p>
                     <div class="project-tags">
                         <span class="tag">Deep Learning</span>
                         <span class="tag">DenseNet</span>
@@ -436,6 +436,7 @@
     <script src="js/main.js"></script>
 </body>
 </html>
+
 
 
 
