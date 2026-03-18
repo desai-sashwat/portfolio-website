@@ -167,31 +167,32 @@ if (typeof particlesJS !== 'undefined') {
 
 // ===== Scroll Animations =====
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            const delay = entry.target.getAttribute('data-delay');
+            if (delay) {
+                entry.target.style.transitionDelay = delay;
+            }
+            entry.target.classList.add('is-visible');
+            // Optional: unobserve if you only want it to animate once
+            // observer.unobserve(entry.target);
+        } else {
+            // Remove condition if you want it to trigger every time, or keep it to only trigger once
+            entry.target.classList.remove('is-visible');
+            entry.target.style.transitionDelay = '0s'; // reset delay on scroll up
         }
     });
 }, observerOptions);
 
 // Observe all sections and cards
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll(
-        '.timeline-item, .project-card, .skill-category, .education-card, .publication-item'
-    );
-    
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    animatedElements.forEach(el => observer.observe(el));
 });
 
 // ===== Contact Form =====
